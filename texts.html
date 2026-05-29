@@ -29,27 +29,26 @@
     nav { margin-bottom: 2rem; }
     nav a { color: var(--ink); text-decoration: underline; margin-right: 1rem; font-size: 0.9rem; }
     p { margin: 0 0 1rem 0; }
-    em { font-style: italic; }
-    a.mail { color: var(--ink); }
     img { display: block; max-width: 100%; max-height: 520px; width: auto; margin-bottom: 1.6rem; }
-    .page-label { font-size: 0.85rem; color: var(--muted); margin: 0 0 1rem 0; }
     .section-label { font-size: 0.85rem; color: var(--muted); margin: 0 0 0.6rem 0; }
-    .news-item { margin-bottom: 0.8rem; }
-    .news-date, .event-date, .text-date { color: var(--muted); font-size: 0.8rem; }
-    .group-label { font-size: 0.9rem; margin: 1.6rem 0 0.4rem 0; padding-bottom: 0.2rem; border-bottom: 1px solid var(--line); }
-    .group-label:first-of-type { margin-top: 0; }
-    .year { font-size: 0.85rem; color: var(--muted); margin: 0.9rem 0 0.2rem 0; }
-    ul { list-style: none; padding: 0; margin: 0 0 0.5rem 0; }
-    ul li { margin-bottom: 0.25rem; }
-    ul li a { color: var(--ink); }
-    .tag { color: var(--muted); font-size: 0.75rem; font-style: italic; margin-left: 0.4rem; }
-    .event, .text-item { margin-bottom: 0.8rem; }
-    .note { color: var(--muted); font-size: 0.8rem; }
+    .news-item { margin-bottom: 0.8rem; font-size: 0.9rem; }
+    .news-date { color: var(--muted); font-size: 0.8rem; }
     footer { margin-top: 3rem; color: var(--muted); font-size: 0.75rem; }
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { color: var(--ink); }
+  </style>
+  <style>
+    .group-label { font-size: 0.9rem; margin: 1.8rem 0 0.5rem 0; padding-bottom: 0.2rem; border-bottom: 1px solid var(--line); }
+    .group-label:first-of-type { margin-top: 0; }
+    .item { margin-bottom: 0.9rem; }
+    .item-meta { color: var(--muted); font-size: 0.8rem; }
+    .item-title { margin: 0.1rem 0; }
+    .item-title a { color: var(--ink); }
+    .item-desc { color: var(--muted); font-size: 0.85rem; }
   </style>
 </head>
 <body>
-  <p class="site-name"><a href="../index.html">Ryotaro Ishihara</a></p>
+  <p class="site-name"><a href="index.html">Ryotaro Ishihara</a></p>
   <nav>
     <a href="about.html">about</a>
     <a href="works.html">works</a>
@@ -59,13 +58,19 @@
 
   <p class="page-label">texts</p>
 
-  <div class="text-item">
-    <div class="text-date">2026</div>
-    <div>「窓さ」について — 作品におけるフレームと外部性をめぐる覚書（準備中）</div>
+  <div class="group-label">blog</div>
+  <p class="note">準備中。</p>
+
+  <div class="group-label">論文 / papers</div>
+  <div class="item">
+    <div class="item-meta">2024</div>
+    <div class="item-title"><a href="texts/mapping-theory.pdf" target="_blank" rel="noopener">写像論的作品解釈の構造と音楽への実践</a> <span class="item-meta">(PDF)</span></div>
+    <div class="item-desc">作曲行為における「素材」と「作品」の関係を、ウィトゲンシュタイン『論理哲学論考』の写像理論を手がかりに分析し、表徴度・形式度による座標的整理を提案する論考。「窓さ」概念を中心に展開する。</div>
   </div>
 
-  <p class="note">論考やテキストをここに追加していきます。</p>
+  <div class="group-label">toro</div>
+  <p class="note">準備中。</p>
 
-  <footer>&copy; 2026 C.A.A.S.</footer>
+  <footer><a href="caas.html">&copy; 2026 C.A.A.S.</a></footer>
 </body>
 </html>
