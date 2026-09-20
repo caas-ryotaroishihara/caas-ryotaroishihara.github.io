@@ -53,11 +53,13 @@
     .page-img { display:block; max-width:100%; width:100%; max-width:500px; margin:0 0 1.6rem 0; }
   </style>
   <style>
-    .event { margin-bottom: 1.4rem; max-width: 600px; }
-    .event-date { color: var(--muted); font-size: 0.8rem; }
-    .event-title { margin: 0.1rem 0; }
-    .event-detail { color: var(--muted); font-size: 0.85rem; white-space: pre-line; }
-    .note { color: var(--muted); font-size: 0.8rem; }
+    .list-label { font-size: 0.85rem; color: var(--muted); margin: 1.8rem 0 0.8rem 0; }
+    .list-label:first-of-type { margin-top: 0; }
+    .entry { display: block; margin-bottom: 1.3rem; max-width: 600px; color: var(--ink); text-decoration: none; }
+    .entry:hover .entry-title { text-decoration: underline; }
+    .entry-date { color: var(--muted); font-size: 0.8rem; }
+    .entry-title { margin: 0.1rem 0; }
+    .entry-venue { color: var(--muted); font-size: 0.85rem; }
   </style>
 </head>
 <body>
@@ -74,42 +76,19 @@
 
   <p class="page-label">schedule</p>
 
-  <div class="event">
-    <div class="event-date">2026.10.3 / 10.4 / 10.12</div>
-    <div class="event-title">左岸</div>
-    <img src="images/schedule/Sagan.jpg" alt="『左岸』フライヤー">
-    <div class="event-detail">音響的居住空間を徳冨蘆花の住んだ平屋へ数日かけ設営する進行型インスタレーション
+  <p class="list-label">upcoming</p>
 
-10/3　満粋, 石原遼太郎
-10/4　満粋, 田中託未
-10/12　満粋, 雪路
+  <a class="entry" href="schedule/sagan-ugan.html">
+    <div class="entry-date">2026.10.3 / (10.4) / (10.12) / 10.18</div>
+    <div class="entry-title">左岸/右岸</div>
+    <div class="entry-venue">蘆花記念公園第一休憩所 / 浪子不動尊付近トンネル(逗子)</div>
+  </a>
 
-蘆花記念公園第一休憩所　各回12:00〜16:00
-
-協力：逗子アートフェスティバル
-フライヤーデザイン：柳澤駿
-
-<a href="https://www.zushi-art.com/artsite-detail/lF4Pwdj1">逗子アートフェスティバル 作品ページ</a>
-    </div>
-  </div>
-
-  <div class="event">
-    <div class="event-date">2026.10.18 (Sun) 17:00〜</div>
-    <div class="event-title">右岸</div>
-    <img src="images/schedule/Ugan.jpg" alt="『右岸』フライヤー">
-    <div class="event-detail">海につづくトンネルで行う朗読、音楽、芝居によるパフォーマンス
-
-浪子不動尊付近トンネル
-神奈川県逗子市新宿５丁目５−５　浪子不動園地あたり
-
-出演：石原遼太郎, 田中託未, 雪路
-
-協力：逗子アートフェスティバル
-フライヤーデザイン：柳澤駿
-
-<a href="https://www.zushi-art.com/event-detail/H5AKsEnm">逗子アートフェスティバル 作品ページ</a>
-    </div>
-  </div>
+  <a class="entry" href="schedule/toward-the-dam.html">
+    <div class="entry-date">2026.11.27 (Fri)</div>
+    <div class="entry-title">Toward the DAM(堰へ)</div>
+    <div class="entry-venue">ホール&amp;ピアノスタジオ ACCOUSTICA(新宿・大久保)</div>
+  </a>
 
   <footer><a href="caas.html">&copy; 2026 C.A.A.S.</a></footer>
 </body>
