@@ -70,6 +70,13 @@
     @media (prefers-reduced-motion: reduce) {
       .js .reveal { opacity: 1; transform: none; transition: none; }
     }
+
+    /* lightbox — flyer をクリックで拡大 */
+    .zoomable { cursor: zoom-in; }
+    .lightbox { position: fixed; inset: 0; z-index: 1000; display: none; align-items: center; justify-content: center; background: rgba(0,0,0,0.88); padding: 1rem; cursor: zoom-out; overscroll-behavior: contain; }
+    .lightbox.is-open { display: flex; }
+    .lightbox img { display: block; max-width: 100%; max-height: 100%; width: auto; height: auto; margin: 0; object-fit: contain; }
+    body.lightbox-open { overflow: hidden; }
   </style>
   <script>document.documentElement.classList.add('js');</script>
 </head>
@@ -106,10 +113,10 @@ DOOR　¥4,000</div>
   </div>
 
   <div class="reveal"><div class="sub">flyer</div></div>
-  <img class="work-img reveal" src="../images/schedule/toward-the-dam-tate-omote.png" alt="『Toward the Dam』フライヤー(縦・表)">
-  <img class="work-img reveal" src="../images/schedule/toward-the-dam-tate-ura.png" alt="『Toward the Dam』フライヤー(縦・裏)">
-  <img class="work-img reveal" src="../images/schedule/toward-the-dam-yoko-omote.png" alt="『Toward the Dam』フライヤー(横・表)">
-  <img class="work-img reveal" src="../images/schedule/toward-the-dam-yoko-ura.png" alt="『Toward the Dam』フライヤー(横・裏)">
+  <img class="work-img reveal zoomable" src="../images/schedule/toward-the-dam-tate-omote.jpg" data-large="../images/schedule/large/toward-the-dam-tate-omote-large.jpg" alt="『Toward the Dam』フライヤー(縦・表)">
+  <img class="work-img reveal zoomable" src="../images/schedule/toward-the-dam-tate-ura.jpg" data-large="../images/schedule/large/toward-the-dam-tate-ura-large.jpg" alt="『Toward the Dam』フライヤー(縦・裏)">
+  <img class="work-img reveal zoomable" src="../images/schedule/toward-the-dam-yoko-omote.jpg" data-large="../images/schedule/large/toward-the-dam-yoko-omote-large.jpg" alt="『Toward the Dam』フライヤー(横・表)">
+  <img class="work-img reveal zoomable" src="../images/schedule/toward-the-dam-yoko-ura.jpg" data-large="../images/schedule/large/toward-the-dam-yoko-ura-large.jpg" alt="『Toward the Dam』フライヤー(横・裏)">
 
   <div class="reveal"><div class="sub">note</div></div>
   <div class="work-body reveal">
@@ -142,6 +149,10 @@ Flyer design by Hatsune Itano</div>
 
   <footer><a href="../caas.html">&copy; 2026 C.A.A.S.</a></footer>
 
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="フライヤー拡大表示" aria-hidden="true">
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
   <script>
     (function () {
       var els = document.querySelectorAll('.reveal');
@@ -155,6 +166,42 @@ Flyer design by Hatsune Itano</div>
         });
       }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
       els.forEach(function (el) { io.observe(el); });
+    })();
+
+    // lightbox
+    (function () {
+      var box = document.getElementById('lightbox');
+      var big = document.getElementById('lightbox-img');
+      var lastFocus = null;
+
+      function open(img) {
+        lastFocus = img;
+        big.src = img.getAttribute('data-large') || img.src;
+        big.alt = img.alt;
+        box.classList.add('is-open');
+        box.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('lightbox-open');
+      }
+      function close() {
+        box.classList.remove('is-open');
+        box.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('lightbox-open');
+        big.src = '';
+        if (lastFocus) { lastFocus.focus(); }
+      }
+
+      document.querySelectorAll('.zoomable').forEach(function (img) {
+        img.setAttribute('tabindex', '0');
+        img.setAttribute('role', 'button');
+        img.addEventListener('click', function () { open(img); });
+        img.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(img); }
+        });
+      });
+      box.addEventListener('click', close);
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && box.classList.contains('is-open')) { close(); }
+      });
     })();
   </script>
 </body>
