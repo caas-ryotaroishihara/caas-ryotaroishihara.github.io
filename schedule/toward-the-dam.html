@@ -63,7 +63,15 @@
     .program-meta { color: var(--muted); font-size: 0.85rem; }
     .ticket-link { font-size: 1.05rem; }
     .ticket-link a { color: var(--ink); }
+
+    /* scroll reveal — JSが有効なときだけ隠す(無効なら通常表示) */
+    .js .reveal { opacity: 0; transform: translateY(28px); transition: opacity 2s ease, transform 2s ease; }
+    .js .reveal.is-visible { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .js .reveal { opacity: 1; transform: none; transition: none; }
+    }
   </style>
+  <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
   <p class="site-name"><a href="../index.html">Ryotaro Ishihara</a></p>
@@ -80,11 +88,14 @@
   <p class="work-title">Toward the Dam(堰へ)</p>
   <p class="work-meta">2026.11.27 (Fri) — chamber music · live electronics</p>
 
+  <div class="reveal">
   <div class="sub">ticket</div>
-  <p class="ticket-link"><a href="TICKET_URL_HERE" target="_blank" rel="noopener">チケット予約はこちら</a></p>
+  <p class="ticket-link"><a href="https://towardthedam.peatix.com/" target="_blank" rel="noopener">チケット予約はこちら</a></p>
   <div class="block">ADV　¥3,700
 DOOR　¥4,000</div>
+  </div>
 
+  <div class="reveal">
   <div class="sub">info</div>
   <div class="block">2026年11月27日(金)
 開場 18:15 / 開演 19:00
@@ -92,15 +103,16 @@ DOOR　¥4,000</div>
 ホール&amp;ピアノスタジオ ACCOUSTICA
 〒169-0072
 東京都新宿区大久保2丁目16-36 音楽センター会館 B1</div>
+  </div>
 
-  <div class="sub">flyer</div>
-  <img class="work-img" src="../images/schedule/toward-the-dam-tate-omote.png" alt="『Toward the Dam』フライヤー(縦・表)">
-  <img class="work-img" src="../images/schedule/toward-the-dam-tate-ura.png" alt="『Toward the Dam』フライヤー(縦・裏)">
-  <img class="work-img" src="../images/schedule/toward-the-dam-yoko-omote.png" alt="『Toward the Dam』フライヤー(横・表)">
-  <img class="work-img" src="../images/schedule/toward-the-dam-yoko-ura.png" alt="『Toward the Dam』フライヤー(横・裏)">
+  <div class="reveal"><div class="sub">flyer</div></div>
+  <img class="work-img reveal" src="../images/schedule/toward-the-dam-tate-omote.png" alt="『Toward the Dam』フライヤー(縦・表)">
+  <img class="work-img reveal" src="../images/schedule/toward-the-dam-tate-ura.png" alt="『Toward the Dam』フライヤー(縦・裏)">
+  <img class="work-img reveal" src="../images/schedule/toward-the-dam-yoko-omote.png" alt="『Toward the Dam』フライヤー(横・表)">
+  <img class="work-img reveal" src="../images/schedule/toward-the-dam-yoko-ura.png" alt="『Toward the Dam』フライヤー(横・裏)">
 
-  <div class="sub">note</div>
-  <div class="work-body">
+  <div class="reveal"><div class="sub">note</div></div>
+  <div class="work-body reveal">
     <div class="poem">堰へ向かう
 あの太々しい　淡水の　溜池を
 見にゆこう
@@ -111,16 +123,16 @@ DOOR　¥4,000</div>
     <p class="quote-src">(石川達三『日蔭の村』)</p>
   </div>
 
-  <div class="sub">program</div>
-  <div class="work-body">
+  <div class="reveal"><div class="sub">program</div></div>
+  <div class="work-body reveal">
     <p><span class="program-title">Toward the Dam</span> <span class="program-meta">(ca. 70min., 17 movements) — World Premiere</span><br>
     <span class="program-meta">Composed by Ryotaro Ishihara</span></p>
     <p><span class="program-title">Kite</span> <span class="program-meta">(ca. 10min.) — World Premiere</span><br>
     <span class="program-meta">Composed by Ryotaro Ishihara, Based on fragments of Brian Eno's <i>By This River</i>, Dedicated to Refaat Alareer</span></p>
   </div>
 
-  <div class="sub">credits</div>
-  <div class="credits">石原遼太郎 (Tsax)
+  <div class="reveal"><div class="sub">credits</div></div>
+  <div class="credits reveal">石原遼太郎 (Tsax)
 金原直哉 (Pf, Elec)
 川原紫響 (Vc)
 
@@ -129,5 +141,21 @@ Presented by C.A.A.S.
 Flyer design by Hatsune Itano</div>
 
   <footer><a href="../caas.html">&copy; 2026 C.A.A.S.</a></footer>
+
+  <script>
+    (function () {
+      var els = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window)) {
+        els.forEach(function (el) { el.classList.add('is-visible'); });
+        return;
+      }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+      els.forEach(function (el) { io.observe(el); });
+    })();
+  </script>
 </body>
 </html>
