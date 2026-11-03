@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>toro 006 — 手記から I — Ryotaro Ishihara</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Ryotaro Ishihara">
+  <meta property="og:title" content="toro 006 — 手記から I">
+  <meta name="description" content="toro 006 — 手記から I / 石原遼太郎">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;1,400&display=swap');
+    :root {
+      --ink: #111111;
+      --muted: #666;
+      --faint: #888;
+      --line: #ccc;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-padding-top: 1rem; }
+    body {
+      font-family: 'Spectral', 'Hiragino Mincho ProN', 'Yu Mincho', serif;
+      font-size: 16px;
+      line-height: 1.9;
+      color: var(--ink);
+      background: #fff;
+      max-width: 620px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+      font-variant-numeric: lining-nums;
+    }
+    .site-name { font-size: 1.4rem; font-weight: 500; margin: 0 0 0.2rem 0; }
+    .site-name a { color: var(--ink); text-decoration: none; }
+    nav { margin-bottom: 2rem; }
+    nav a { color: var(--ink); text-decoration: underline; margin-right: 1rem; font-size: 0.9rem; }
+    .toro-no { font-size: 0.85rem; color: var(--muted); letter-spacing: 0.1em; margin: 0 0 0.2rem 0; }
+    .article-title { font-size: 1.3rem; font-weight: 500; margin: 0 0 0.3rem 0; }
+    .article-date { color: var(--muted); font-size: 0.8rem; margin: 0 0 2rem 0; }
+
+    .body p { margin: 0 0 1.1rem 0; text-align: justify; }
+    .body p.lines { text-align: left; }
+    .body p.poem { white-space: pre-wrap; overflow-wrap: anywhere; }
+    .epigraph { margin: 0 0 2.2rem 0; padding: 0 0 0 1rem; border-left: 2px solid var(--line); color: #333; }
+    .epigraph p { margin: 0 0 0.3rem 0; text-align: left; }
+    .epigraph .by { color: var(--muted); font-size: 0.85rem; margin: 0; }
+
+    .day { margin: 0 0 2.8rem 0; }
+    .day-date { font-size: 0.85rem; font-weight: 400; color: var(--muted); letter-spacing: 0.08em; margin: 0 0 0.6rem 0; }
+    .star { text-align: center; color: var(--muted); margin: 1.2rem 0; }
+
+    /* 傍点（原文の傍点を再現） */
+    .bt {
+      -webkit-text-emphasis: filled sesame;
+      text-emphasis: filled sesame;
+      -webkit-text-emphasis-position: over right;
+      text-emphasis-position: over right;
+    }
+
+    /* 注：日毎の末尾、控えめに */
+    .nref { font-size: 0.7em; vertical-align: super; line-height: 0; color: var(--muted); text-decoration: none; }
+    .nref:hover { color: var(--ink); }
+    .notes-wrap { margin: 1.2rem 0 0 0; }
+    .notes-wrap .rule { width: 8rem; border-top: 1px solid var(--line); margin-bottom: 0.6rem; }
+    .notes-wrap p { margin: 0 0 0.35rem 0; color: var(--faint); font-size: 0.76rem; line-height: 1.75; text-align: left; }
+    .notes-wrap a { color: var(--faint); }
+    .notes-wrap a.back { text-decoration: none; margin-right: 0.3em; }
+    .notes-wrap a:hover { color: var(--ink); }
+
+    .refs { margin-top: 2.5rem; padding-top: 1rem; border-top: 1px solid var(--line); color: var(--faint); font-size: 0.76rem; line-height: 1.75; }
+    .refs p { margin: 0 0 0.35rem 0; }
+    .refs a { color: var(--faint); }
+    .refs .refs-label { color: var(--faint); margin: 1.1rem 0 0.4rem 0; letter-spacing: 0.08em; }
+    .refs .refs-label:first-child { margin-top: 0; }
+    .refs ul { list-style: none; margin: 0; padding: 0; }
+    .refs li { margin: 0 0 0.25rem 0; padding-left: 1.4em; text-indent: -1.4em; }
+
+    .pager { display: flex; justify-content: space-between; gap: 1.5rem; margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--line); font-size: 0.85rem; }
+    .pager a { color: var(--ink); text-decoration: none; display: flex; flex-direction: column; max-width: 48%; }
+    .pager .pager-next { margin-left: auto; text-align: right; }
+    .pager .pager-dir { color: var(--muted); font-size: 0.75rem; margin-bottom: 0.15rem; }
+    .pager .pager-ttl { text-decoration: underline; }
+    footer { margin-top: 2.5rem; color: var(--muted); font-size: 0.75rem; }
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { color: var(--ink); }
+  </style>
+</head>
+<body>
+  <p class="site-name"><a href="../../index.html">Ryotaro Ishihara</a></p>
+  <nav>
+    <a href="../../about.html">about</a>
+    <a href="../../works.html">works</a>
+    <a href="../../releases.html">releases</a>
+    <a href="../../schedule.html">schedule</a>
+    <a href="../../texts.html">texts</a>
+  </nav>
+
+  <p class="toro-no">toro 006</p>
+  <h1 class="article-title">手記から I</h1>
+  <p class="article-date">Nov 3 2026</p>
+
+  <div class="body">
+    <blockquote class="epigraph">
+      <p>「より高い状態とより低い状態を区別するもの。それはより高い状態にはいくつかの面が重なり合って同時に存在することである。」</p>
+      <p class="by">（シモーヌ・ヴェイユ、1948）<a class="nref" id="r-ep" href="#n-ep">[1]</a></p>
+    </blockquote>
+    <section class="day" id="d0328">
+      <h2 class="day-date">2026 Mar 28</h2>
+      <p>根性論はアプリオリに否定される事象ではない。というのも、あるプロセスは常に具体的内容を必要としているが、なにがプロセスの具体的内容を発現させるか、その根本的なモチベーションは極めて根性的であると言わねばならない。それは「根をもつこと」<a class="nref" id="r-d0328-1" href="#n-d0328-1">※1</a>に最初から関わっている。</p>
+      <p class="star">＊</p>
+      <p>ものづくりをやっているとある程度までは成果が出る。しかし、大した成果には結びつかぬ。せいぜいクリシェの焼き直しか、それに毛が生えた程度か、芸術にとって本質的な構造への挑戦には至らない。そもそも世間は構造への刷新を要求しない。だからといって〈美しい魂〉<a class="nref" id="r-d0328-2" href="#n-d0328-2">※2</a>のような態度とも、どうも生理的に相容れない。だからこそ、私たち、試されるべき作家は常にソリチュードに立たされているし、立たされなければならない。そこに新たなる話者（Speak-er）の現れを目撃しなければならない。</p>
+      <p class="star">＊</p>
+      <p>デモで声を出す勇気と街中で困っている人に声をかける勇気は似ている。魂のふるえに出会うのだ。私のなかで、良心に出会い、そしてそれが普遍的であることを知るのだ。</p>
+      <p class="star">＊</p>
+      <p>なぜ〈美しい魂〉が受け入れ難いのか。その問いはアーレントに引き継がせよう。表現の担う複数性の倫理が意味を持つのは、それが公共圏において現れなければならないからだ。</p>
+    <div class="notes-wrap">
+      <div class="rule"></div>
+      <p id="n-d0328-1"><a class="back" href="#r-d0328-1">※1</a>哲学者シモーヌ・ヴェイユは著書『根をもつこと』（1949年）において、人間の魂にとって根をもつことを重要な欲求の一つと捉えた。</p>
+      <p id="n-d0328-2"><a class="back" href="#r-d0328-2">※2</a>美しい魂（schöne Seele）— ヘーゲル『精神現象学』に登場する意識のあり方。自分の内面の純粋さや良心を守ろうとするあまり、行為して現実に関わることを避け、行為する他者を偽善として裁く。</p>
+    </div>
+    </section>
+
+    <section class="day" id="d0422">
+      <h2 class="day-date">2026 Apr 22</h2>
+      <p class="lines">いかりやぜつぼうにのまれたくはない。<br>
+        わたしはいつかあなたの光になりたい。<br>
+        そう思う。<br>
+        そして、小さな書物ができあがればいい。<br>
+        私が、ひとりの小市民として、一生けんめいに生きた記録、それが誰かにとって灯火となることがあったら——。</p>
+      <p class="lines">わたしはいつかあなたのひかりになりたい。</p>
+    </section>
+
+    <section class="day" id="d0425">
+      <h2 class="day-date">2026 Apr 25</h2>
+      <p class="lines poem">遠い記憶
+　　もしそんなものがあるなら
+深い気分
+　　もしそんな情態があるなら
+　　　　今まさにそんな気分だ
+卵、生まれたての
+ほかの誰よりも真っ白
+遠くまで (呼び声)
+　　聞いて
+　　　　応えて
+　　　　　　叫んでみて
+　　　　　　　　遠くまで
+時間！(まだ早い！)
+　　逃げるように飛べ！
+　　叫べよ！
+お前がいた！川川川
+　　(森があればいい　光のない緑色)</p>
+      <p class="star">＊</p>
+      <p>常につながるなんて気狂いじみてる。</p>
+    </section>
+
+    <section class="day" id="d0426">
+      <h2 class="day-date">2026 Apr 26</h2>
+      <p>日本の極右政治は止まるところを知らないが、市井にとって、現政権がそのように見えていないのだとしたら、日本は敗戦のもとに、未だ民主主義を知らずにいる。そう思わざるを得ない。</p>
+    </section>
+
+    <section class="day" id="d0515">
+      <h2 class="day-date">2026 May 15</h2>
+      <p>〔Wolfgang Muthspiel - Atlasについて〕とても良いアルバム。小編成のジャズのオーケストレーションの勉強にも適している。構成も複雑だ。こんな曲を器用に書けるようになる日がくるだろうか。研究し続けないといけない。道のりはいつも長い。しかし気づくと、昔、遠くと思っていたところにいたりする。手の届くことをやっていくしかない。そのためにはいつも時間が足りないのだ。私が焦燥するのは、世界の美しさ、その深さにつねに導かれるからだ。<span class="bt">私はいつかあなたの光になりたい</span>。音楽の構造——音楽の深さ、詩の深さ、そこから逃げないこと。私はこうしてここでまだやっているよ、と叫ぶこと。私はいつかあなたの光になりたい。かつて私が作家たち、詩人たちの深さに救われたように。</p>
+         <p class="star">＊</p>
+      <p>△△△を読む。彼女は私をもって現に-語られている。彼女は語ることができる。彼女は、彼女の身体を超えて、地球に存在しないものの存在を照明している。私は音楽でそれを再び照明しようと思う。</p>
+    </section>
+
+    <section class="day" id="d0523">
+      <h2 class="day-date">2026 May 23</h2>
+      <p>アンドリュー・ワイエスの展示<a class="nref" id="r-d0523-1" href="#n-d0523-1">※1</a>を観た。印象的な絵もいくつかあった。写実的で構図的だが、それを崩して立ち上がる抽象性、具体性に基づくからこそ起こる異化がよかった。しかし、展示の仕方は窓を模した壁やドアを模したものが設けられていて、脱ホワイトキューブの方向性としては少しナンセンスだと感じた。作家の持っている多様性=複数性を窓やドアのシンボルが却って矮小化させないかとも思った。鳥のフンが落とされた岩を描いた作品は素晴らしかったし、《オルナンの埋葬》<a class="nref" id="r-d0523-2" href="#n-d0523-2">※2</a>的な、脱歴史画的な伝統を感じることもできる。しかし、窓から飛び入る白い鳥は、率直に面白くないと感じた。鳥は、難しい。作家の思惑を超えて多くを語りすぎてしまう。とくに白鳥は多くの場合饒舌なのだ。マグリットの《大家族》<a class="nref" id="r-d0523-3" href="#n-d0523-3">※3</a>のように、鳥がもつ語りそのものを主題化する場合を除けば。</p>
+      <p class="star">＊</p>
+      <p>シモーヌ・ヴェイユの厳しさや深さに触れて、自分の怠惰を知る。私の中に人に対する軽蔑を知る。昔の自分の方が、自分のそうした性質を監視していたように感じる。年齢を少し重ね、行動と決断をしてきたところで、己を反省するとなれば、顧みなければならない時間の総量も増えてきて、都合のいいクリシェとそれらしいエクスキューズを発明、発見してきたのかもしれない。私が恐れるならば、その恐れを軽減するには、まずわたしが他者に向き合わないといけない。本質主義と決別すること。理解できないことを受け入れること。思考し続けること。自己懐疑性を手放さないこと。</p>
+    <div class="notes-wrap">
+      <div class="rule"></div>
+      <p id="n-d0523-1"><a class="back" href="#r-d0523-1">※1</a>「アンドリュー・ワイエス展」（東京都美術館、2026年）のこと。</p>
+      <p id="n-d0523-2"><a class="back" href="#r-d0523-2">※2</a>ギュスターヴ・クールベ《オルナンの埋葬》（1849–1850）。地方都市の葬儀に集まった無名の市民たちを、歴史画に匹敵する巨大な画面に描いた。写実主義を代表する作品。</p>
+      <p id="n-d0523-3"><a class="back" href="#r-d0523-3">※3</a>ルネ・マグリット《大家族》（1963）。曇天の海を背景に、鳥のシルエットの中だけが晴れた空になっている。</p>
+    </div>
+    </section>
+
+    <section class="day" id="d0529">
+      <h2 class="day-date">2026 May 29</h2>
+      <p class="lines">私の言葉はどこにある。<br>
+        否、そんなもの等の昔から存在しなかった。<br>
+        然し、AIの今世に於いて、その意味は異なる様相をもつ。未だ、うまく説明がつかない。<br>
+        私は私のちからで言葉をつかまえたい。<br>
+        同じものにたどりついていたかもしれない。<br>
+        しかし、私は、私と一緒に言葉をみつけたい。<br>
+        もっと理にかなった、あるいは適当な響きがあっても。<br>
+        私は、私の導いた、いびつな星座をみたい。<br>
+        荒けずりで、不器用で、節操がない、私だけの星座。</p>
+    </section>
+
+    <section class="day" id="d0608">
+      <h2 class="day-date">2026 Jun 8</h2>
+      <p class="lines">私はいつかあなたの光になりたい。<br>
+        私は進んでいるだろうか！私は、——私は。私は一体、どこに立っているのだろうか。<br>
+        私はいつかあなたの光になりたい。<br>
+        深さを目撃してしまった。だから、私は深さを、息の長い世界が在ることを示さないといけない。<br>
+        その責任がある！</p>
+    </section>
+
+    <section class="day" id="d0625">
+      <h2 class="day-date">2026 Jun 25</h2>
+      <p class="lines">思考とはプロセスだった。<br>
+        相手が見えず、尚も、その壁に向かって語り続けるということ、そこに思考があった。</p>
+    </section>
+
+    <section class="day" id="d0708">
+      <h2 class="day-date">2026 Jul 8</h2>
+      <p class="lines">私が私の期待に応えてくれない。<br>
+        私が期待していること、<span class="bt">正しいこと</span>、<span class="bt">善</span>。<br>
+        <span class="bt">善を欲望する</span>。<br>
+        <span class="bt">これじゃ厭なんだ</span>。<span class="bt">人生は限られている</span>。<br>
+        だからますます人生を欲望している。<br>
+        進みたい。そのためにも習慣が必要で、<span class="bt">私が私の支配下にある感覚が欲しい</span>。<br>
+        善への欲望に、半ば惰性的に駆られる。<br>
+        そう、そこには怠惰がかくれている。隠匿している。<br>
+        慾には<span class="bt">きりがない</span>。<br>
+        （そしていつも私は少し焦っている）<br>
+        <span class="bt">一度私を引き受けること</span>。（受け入れるとは言わずに）<br>
+        まず引き受けるところからはじめないといけない。<br>
+        それが学問であり、芸術であり、知性そのものだ。寝よう。</p>
+    </section>
+
+    <section class="day" id="d0714">
+      <h2 class="day-date">2026 Jul 14</h2>
+      <p class="lines">遠くまで入ってゆけたなら。<br>
+        私は、でも、少し、遠くまでいきたい。<br>
+        知らない、湖を、みに行きたい。<br>
+        きっと美しいだろう。</p>
+    </section>
+
+    <section class="day" id="d0729">
+      <h2 class="day-date">2026 Jul 29</h2>
+      <p>やきもきして、集中できず、注意散漫でいる。LINEを消す。返信を待つのが屈辱だと感じてしまう。——屈辱？多分そうじゃない。少しづつ苦しいのだ。ある閾値がある。連帯と孤独（solitude）。連帯には限界がある。いつでも連絡ができるなんて、到底耐えられない。書いて、繋がりをたって少しづつ降りてゆくのを感じる。いつもつながる/つながらない——そのデュアリズムの間に無限のバリエーションがあるように思う。そのとき私は空間を変容しているのだ。この手許存在<a class="nref" id="r-d0729-1" href="#n-d0729-1">※1</a>からなる非ユークリッド空間において、私はLINEを消すことで、移動する。その部屋に私は今居たいと思う。また、この部屋にしばらく居たらこの部屋にも飽きてくるだろう。</p>
+    <div class="notes-wrap">
+      <div class="rule"></div>
+      <p id="n-d0729-1"><a class="back" href="#r-d0729-1">※1</a>手許存在（Zuhandenheit）— ハイデガー『存在と時間』の用語。道具が、使う活動のなかで、使う人にとっての「用だて」として現れているあり方。道具は単独ではなく、他の道具や目的との連関（道具連関）のなかで現れる。</p>
+    </div>
+    </section>
+
+    <section class="day" id="d0801">
+      <h2 class="day-date">2026 Aug 1</h2>
+      <p>私の本棚が消えたら、私は幸せか、寂しいか。おそらくとても寂しい。なぜならこの庭は時間を飛び越えている。場所——＜トポス＞そのものだから。</p>
+      <p>捨てることを一概にいいと叫ぶのは乱暴だし、ミニマリズム-ファシズムだ。しかしそれと同時に、自分のSolitudeを守るための実践的なプロセスは一定の別れを要求している。そうしてはじめて、私の時間をはじめることができる。</p>
+    </section>
+
+    <section class="day" id="d0807">
+      <h2 class="day-date">2026 Aug 7</h2>
+      <p>自明性について扱うことは、結構センシティブなことだ。結構、これを扱うと、人は怒る。「私のリアリティは私のものだ！あなたには関係ない！」と。しかし、悲しいかな、この社会は、＜活動＞<a class="nref" id="r-d0807-1" href="#n-d0807-1">※1</a>は、そのリアリティに孔を穿つところから始まる。他者を認識し続けることは大変なことだし、それは私に対してもわかった気になってはいけないと思う。しかし、他者を見えなくした社会に希望はない。本当にない。そんな社会に私は生きたくない。生きる理由がないからだ。</p>
+    <div class="notes-wrap">
+      <div class="rule"></div>
+      <p id="n-d0807-1"><a class="back" href="#r-d0807-1">※1</a>活動（action）— ハンナ・アーレント『人間の条件』の用語。労働・仕事と区別される人間の営みの一つで、他者の前で言葉と行為によって自分を現し、新しい始まりをもたらすこと。他者との複数性を条件とする。</p>
+    </div>
+    </section>
+
+    <section class="day" id="d0808">
+      <h2 class="day-date">2026 Aug 8</h2>
+      <p>焦っていては寝られない。安心させないといけない。それが難しい。それを意識することは端的に言って矛盾だからだ。しかし私は寝ないといけないし、明日も活動しないといけない。それ以外に道がない。読みたい本だってごまんとあるし、行きたい場所だってごまんとあるし、文句を言いたいことだってごまんとあるし、書かなきゃいけない曲だってごまんとあるし、やらなくてはならないことは星の数ほどある！</p>
+    </section>
+
+    <section class="day" id="d0817">
+      <h2 class="day-date">2026 Aug 17</h2>
+      <p>旅行の時に、それをやり切らないと、と焦る。これは、その本からしっかり吸収しないと、と焦ることと同根源的なものだ。そこに私の根源的な「せわしなさ」がある。私は本質的に「せわしない」。これはよく自覚しておくべきだ。——「せわしない」といえばなんだか物悲しいが、語彙のいたずらとは、あるパースペクティブしか、それを保持できないところだ。だから、「せわしなさ」の扉から入れば物悲しいが、「生き急ぎ」の扉から入れば——物悲しいじゃないか。これがファウスト的なさだめなのか？瞬視<a class="nref" id="r-d0817-1" href="#n-d0817-1">※1</a>などあったものではない。いずれにしても書くこと、止まることを通じて、間主観的な空間を保持しなければならない。目を閉じる。あるいは開くことによって。そのときに遠くからの呼び声が聞こえるものだ。書くことは止まることだ。そしてそれはつねに新たなる歩みのプレパレーションであった。</p>
+    <div class="notes-wrap">
+      <div class="rule"></div>
+      <p id="n-d0817-1"><a class="back" href="#r-d0817-1">※1</a>瞬視（Augenblick）— ハイデガー『存在と時間』の用語。単なる時間上の一瞬ではなく、人が自らの可能性と状況を引き受け、決断して現在に向き合う瞬間。</p>
+    </div>
+    </section>
+
+    <section class="day" id="d0908">
+      <h2 class="day-date">2026 Sep 8</h2>
+      <p class="lines">書き遺すということ。書き留めるということ。<br>
+        忘れたくないこと。忘れてはいけないこと。<br>
+        私はあなただから。対話しないといけない。<br>
+        対話を持続させること。永い瞑想。<br>
+        書き落とすこと。書き燻ること。<br>
+        書き悶えること。書き殴ること。<br>
+        書き淀むこと。書き崩れること。<br>
+        書き明けること。書き草臥れること。</p>
+    </section>
+
+    <section class="day" id="d0920">
+      <h2 class="day-date">2026 Sep 20</h2>
+      <p class="lines">昨日、〇〇〇の契約の更新を差し戻した。<br>
+        はじめてのことで、権利とは知りながら、落ち着かないでいる。全く。でも、なんとなく怖いからと、意見を言わなくなった時が、本当に恐るべき時だ。</p>
+    </section>
+
+    <section class="day" id="d1023">
+      <h2 class="day-date">2026 Oct 23</h2>
+      <p>全ての中心に呼吸がある。呼吸を整える。それが核心だ。呼吸とは現象学的な営みだ。現象学的な地平において、呼吸を変えることとは端的に「世界」を変えることだ。世界を変えるより、「世界」を変える方がまだ易しく、また世界を変えるためには、まずは私の「世界」が変わらなければならない。</p>
+    </section>
+
+    <section class="day" id="d1026">
+      <h2 class="day-date">2026 Oct 26</h2>
+      <p>静かに暮らせたら、と思う。そしたらなんていいことだろう。私だけではだめだ。みんなが「静かに」暮らすための公共圏を創出しなければならない。しかし、次なる政治を動かすものは、必ず市井が欲する承認に応えるものだ。その者が、正義の味方でなければいけない。そして、エクストリーミズムはスケープゴートを形成する点に於いて正義の味方ではない。<br>
+        正義の味方とは、脱構築<a class="nref" id="r-d1026-1" href="#n-d1026-1">※1</a>をし続ける者を言う。</p>
+      <p class="star">＊</p>
+      <p>それにしてもふと淋しい気持ちになることが多々ある。移動し続けること。身体のモビリティ（しかしこれは特権でもある）は、時間を「庭化」する。庭に於いて過去や未来はゆるやかに邂逅する。——それは瞬視だろうか？庭化した時間と、それによって現動化<a class="nref" id="r-d1026-2" href="#n-d1026-2">※2</a>する現象学的な「ここ」（空間）は、過去を釈放する。「過去はもはや重荷ではない」。身体のモビリティが私たちの過去を庭化させるのは、静止では看取できない空間——建物の裏側や山の向こうの広がり——を確かめるからだ。「時間は消えていくものだとしても」<a class="nref" id="r-d1026-3" href="#n-d1026-3">※3</a>。そして空間をまなざす視線は、今度は数多の他者のそれを想定する。そのとき、人はまだ見ぬ空間を、しかしそれは空間であると同定する<a class="nref" id="r-d1026-4" href="#n-d1026-4">※4</a>。——写真とは、人間のアプリオリな空間認識のプロセスの現動化なのではないか？</p>
+    <div class="notes-wrap">
+      <div class="rule"></div>
+      <p id="n-d1026-1"><a class="back" href="#r-d1026-1">※1</a>脱構築（déconstruction）— ジャック・デリダの用語。ある概念や制度が、二項対立（善/悪、内/外など）の一方を特権化することで成り立っていることを明らかにし、その前提を問い直し続ける営み。</p>
+      <p id="n-d1026-2"><a class="back" href="#r-d1026-2">※2</a>現動化（actualisation）— 可能性や潜在的なものが、現実の出来事・状態として現れること。ドゥルーズらの用法では、潜在的なもの（le virtuel）が現実のものへと分化・実現する過程を指す。</p>
+      <p id="n-d1026-3"><a class="back" href="#r-d1026-3">※3</a>「過去はもはや重荷ではない／時間は消えていくものだとしても」は次からの引用。スーザン・ソンタグ「若い読者へのアドバイス」『良心の領界』木幡和枝訳、NTT出版、2004年、ii-iii頁。</p>
+      <p id="n-d1026-4"><a class="back" href="#r-d1026-4">※4</a>「一回りしてこの隠された部分に達すれば、対象の後ろにいた他者に合流して、その対象について予見されていた全体化を達成できるだろう。」ジル・ドゥルーズ『意味の論理学』（下）小泉義之訳、河出書房新社、2007年、232頁。（Gilles Deleuze, <i>Logique du sens</i>, Minuit, 1969.）</p>
+    </div>
+    </section>
+
+    <section class="day" id="d1029">
+      <h2 class="day-date">2026 Oct 29</h2>
+      <p>誰にでもアイデンティティが毀損されない人格権がある。どれだけ空気が気まずくなろうともアイデンティティ、あるいは言われようのないことを受け容れないことは、権利だ。彼は権利よりも空気を大切にしてしまう、危うい日本的なエトスを身体化している。と書いたところで、その日本的なエトスは果たして悪者なのか、そもそもそれは「日本的」なのか。私は記号化された日本性の亡霊をスケープゴートしてはいないか。——しかし良い社会を作るためには、社会はやはり人権思想に基づくべきだと思う。直観かもしれない。しかし、残酷さを軽減すること、他者を認めること、人間が最終的に手段としてではなく目的として扱われること、他者と暮らすこと、分かち合うこと、人間を信じること、人間を信じ続けること。</p>
+      <p class="star">＊</p>
+      <p>僕は単純さゆえに気難しく思われるのかもしれない——もしそうだとしたら、私たちはなぜ「複雑」なのか？それが「現実原則」<a class="nref" id="r-d1029-1" href="#n-d1029-1">※1</a>なのか？私は芸術を通して無垢であることの権利運動をしたいのだろうか。</p>
+      <p class="star">＊</p>
+      <p>李〔禹煥〕の作品における「窓」<a class="nref" id="r-d1029-2" href="#n-d1029-2">※2</a>について、そこにあるのはオーディエンスと作品の関わりの中で、作品の中の他者性が再定義され続けるプロセスであり、それは厳密には他者ではあるが、「窓」ではない。李の作品は過去形において「窓」なのだ。「窓」とは他者ではない。「窓」によって（孔によって）閉じた空間に他者を<span class="bt">呼び込むことができる</span>。それは歴史的な他者なのか、それとも現に-現れるものとしての他者なのか。</br>
+        窓は開かれる。窓は変容させる。窓は名辞と戯れる。</p>
+    <div class="notes-wrap">
+      <div class="rule"></div>
+      <p id="n-d1029-1"><a class="back" href="#r-d1029-1">※1</a>現実原則（Realitätsprinzip）— フロイトの用語。欲求をただちに満たそうとする「快原理」に対して、現実の制約や他者との関係に合わせ、満足を延期したり形を変えたりして調整する心の働き。</p>
+      <p id="n-d1029-2"><a class="back" href="#r-d1029-2">※2</a>筆者の「窓」の概念については拙論『写像論的作品解釈の構造と音楽への実践』（2024）およびその22頁以降を参照（<a href="https://ryotaroishihara.com/texts/mapping-theory.pdf" target="_blank" rel="noopener">https://ryotaroishihara.com/texts/mapping-theory.pdf</a>）。</p>
+    </div>
+    </section>
+
+    <section class="day" id="d1102">
+      <h2 class="day-date">2026 Nov 2</h2>
+      <p>真実に生きたいと思う。それはつまり善に生きたいと思うということ。暉峻淑子『承認を開く』（岩波書店、2024）でモリカケ問題で自死した人の話を読む。胸が痛む。<br>
+        シモーヌ・ヴェイユはプラトン解釈を通して善を欲することについて語った<a class="nref" id="r-d1102-1" href="#n-d1102-1">※1</a>。私たちは現に、善を欲望している。自死すること、それはすなわち、死に対して、生で見いだせなかった善を希求することである。しかし、不幸な逆説は、死の世界は、デュアリズムではなく、モニズムが支配していることだ。そこにあるのは空虚な穴であり、善を欲望する主体が立つべき大地が根こそぎになっている。</p>
+    <div class="notes-wrap">
+      <div class="rule"></div>
+      <p id="n-d1102-1"><a class="back" href="#r-d1102-1">※1</a>「わたしたちがこの世界にあると思い込んでおり、どうしようもなく未来に措定せずにはいられない無限な善と無限な悪は、想像上のものにすぎない。最も低俗な者であれ、すべての人間のうちに絶えず兆す無限な善への欲望は、対象をこの世界の外にしかもたらさない。」シモーヌ・ヴェイユ「『ティマイオス』註解」『前キリスト教的直観』今村純子訳、法政大学出版局、2011年、40頁。</p>
+    </div>
+    </section>
+  </div>
+
+  <div class="refs">
+    <p id="n-ep"><a class="back" href="#r-ep" style="text-decoration:none">[1]</a> シモーヌ・ヴェイユ「錯覚」『重力と恩寵』渡辺義愛訳、『シモーヌ・ヴェイユ著作集 III』所収、春秋社、1968年、120頁。（Simone Weil, <i>La Pesanteur et la Grâce</i>, Plon, 1948）</p>
+
+    <p class="refs-label">凡例</p>
+    <ul>
+      <li>一、本手記は、2026年4月から11月にかけての日記から抜粋し、多少の修正を施し、日付順に配列したものである。</li>
+      <li>一、各項は日毎にまとめ、同一日の中での区切りは「＊」で示した。</li>
+      <li>一、〔　〕内は、公開にあたって付した補足である。</li>
+      <li>一、注のある項では、その日の記述の末尾に注を置いた。注は日記の執筆時ではなく、公開にあたって後から書いたものである。</li>
+      <li>一、固有名の一部は伏せ字（〇〇〇、△△△）とした。</li>
+    </ul>
+  </div>
+
+  <div class="pager">
+    <a class="pager-prev" href="005.html"><span class="pager-dir">&laquo; 前</span><span class="pager-ttl">005　《Susuki》について</span></a>
+  </div>
+
+  <footer><a href="../../caas.html">&copy; 2026 C.A.A.S.</a></footer>
+</body>
+</html>
