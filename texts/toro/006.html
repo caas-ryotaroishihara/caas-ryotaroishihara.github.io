@@ -44,6 +44,7 @@
     .body p { margin: 0 0 1.1rem 0; text-align: justify; }
     .body p.lines { text-align: left; }
     .body p.poem { white-space: pre-wrap; overflow-wrap: anywhere; }
+    .body > .day > p:not(.lines):not(.poem):not(.star):not(:has(br)) { text-indent: 1em; }
     .epigraph { margin: 0 0 2.2rem 0; padding: 0 0 0 1rem; border-left: 2px solid var(--line); color: #333; }
     .epigraph p { margin: 0 0 0.3rem 0; text-align: left; }
     .epigraph .by { color: var(--muted); font-size: 0.85rem; margin: 0; }
